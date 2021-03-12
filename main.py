@@ -1,9 +1,11 @@
+import os
+
 from gmail import gmailClient
 
 
 def main():
     gmailClient.send_email(
-        receiver='ksdsouza@uwaterloo.ca',
+        receiver=os.environ.get("EMAIL", "default_email"),
         subject='Test gmail api message',
         body='Hello World!'
     )
